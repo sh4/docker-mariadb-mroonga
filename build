@@ -1,0 +1,7 @@
+#!/bin/sh
+
+docker build -t mariadb-mroonga .
+docker run -v $PWD:/build:rw -t mariadb-mroonga \
+    cp /mariadb-10.0.15/storage/mroonga/ha_mroonga.so /build && \
+    strip ha_mroonga.so
+
