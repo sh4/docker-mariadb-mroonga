@@ -1,0 +1,11 @@
+--- ha_mroonga.cpp.orig	2014-11-30 13:18:37.000000000 +0900
++++ ha_mroonga.cpp	2014-11-30 13:18:41.000000000 +0900
+@@ -7675,7 +7675,7 @@
+     grn_expr_append_obj(info->ctx, match_columns, index_column, GRN_OP_PUSH, 1);
+   }
+   grn_expr_flags expression_flags =
+-    GRN_EXPR_SYNTAX_QUERY | GRN_EXPR_ALLOW_LEADING_NOT;
++    GRN_EXPR_SYNTAX_QUERY | GRN_EXPR_ALLOW_LEADING_NOT | GRN_EXPR_ALLOW_COLUMN;
+   rc = grn_expr_parse(info->ctx, expression,
+                       keyword, keyword_length,
+                       match_columns, GRN_OP_MATCH, default_operator,
